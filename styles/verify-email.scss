@@ -1,0 +1,61 @@
+.verify {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--perano);
+
+  .container {
+    width: 35%;
+    height: 50%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #fff;
+    background-color: #fff;
+
+    h1 {
+      .email {
+        display: block;
+        margin: 10px 0;
+        font-weight: 600;
+        font-size: 1.4rem;
+      }
+    }
+
+    button {
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      margin-top: 10px;
+      padding: 10px 15px;
+      border-radius: 4px;
+      transition: all 400ms ease-in-out;
+      background-color: var(--portage-shade);
+
+      &:active {
+        transform: scale(0.96);
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+        background-color: hwb(226 55% 50%);
+      }
+    }
+    .footer {
+      font-size: 0.9rem;
+      margin-top: 10px;
+      color: var(--comet);
+
+      span {
+        color: inherit;
+        cursor: pointer;
+        font-size: inherit;
+        text-decoration: underline;
+      }
+    }
+  }
+}
