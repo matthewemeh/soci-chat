@@ -9,7 +9,7 @@ import { showAlert } from '@/public/utils';
 import { AuthContext } from '@/context/AuthContext';
 import { AuthContextData } from '@/public/interfaces';
 
-const verify = () => {
+const VerifyEmail = () => {
   const router: NextRouter = useRouter();
   const [sentEmail, setSentEmail] = useState<boolean>(false);
   const { currentUser, setChat } = useContext<AuthContextData>(AuthContext);
@@ -94,4 +94,4 @@ const verify = () => {
   );
 };
 
-export default verify;
+export default VerifyEmail;
