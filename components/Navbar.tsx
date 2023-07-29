@@ -7,7 +7,9 @@ import { signOut } from 'firebase/auth';
 
 import { AuthContext } from '@/context/AuthContext';
 import { AuthContextData } from '@/public/interfaces';
+
 import { showAlert } from '@/public/utils';
+import { BiSolidUser } from 'react-icons/bi';
 
 /*
   this component is on the left side of the container at the top,
@@ -25,7 +27,11 @@ const Navbar = () => {
       <span className='logo'>Soci Chat</span>
 
       <div className='user'>
-        {photoURL && <Image src={photoURL} alt='' width={24} height={24} priority />}
+        {photoURL ? (
+          <Image src={photoURL} alt='' width={24} height={24} priority />
+        ) : (
+          <BiSolidUser />
+        )}
 
         <span>{username}</span>
         <button
