@@ -37,7 +37,6 @@ const Search = () => {
 
   const getUserChats = (): void => {
     if (!currentUserID) {
-      showAlert({ msg: 'An authentication error has occured' });
       return;
     }
 
@@ -60,7 +59,7 @@ const Search = () => {
 
   const handleSearch = async (): Promise<void> => {
     if (!currentUserID) {
-      showAlert({ msg: 'An authentication error has occured' });
+      showAlert({ msg: 'An error has occured' });
       return;
     }
 
