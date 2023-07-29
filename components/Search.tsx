@@ -174,7 +174,7 @@ const Search = () => {
         <input
           type='text'
           spellCheck='false'
-          autoComplete='off'
+          autoComplete='false'
           onKeyDown={handleKey}
           placeholder='Find a user'
           onChange={e => setUsername(e.target.value)}

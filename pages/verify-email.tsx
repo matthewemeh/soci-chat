@@ -11,7 +11,7 @@ import { AuthContextData } from '@/public/interfaces';
 
 const VerifyEmail = () => {
   const router: NextRouter = useRouter();
-  const [sentEmail, setSentEmail] = useState<boolean>(false);
+  const [emailSent, setEmailSent] = useState<boolean>(false);
   const { currentUser, setChat } = useContext<AuthContextData>(AuthContext);
 
   const [counter, setCounter] = useState<number>(120); // 2 minutes;
@@ -26,11 +26,11 @@ const VerifyEmail = () => {
     }
 
     setCounter(120);
-    setSentEmail(false);
+    setEmailSent(false);
 
     sendEmailVerification(currentUser)
       .then(() => {
-        setSentEmail(true);
+        setEmailSent(true);
         alert(
           `Please verify your email address by clicking on the link in the email we just sent to you at ${currentUser.email}`
         );
@@ -40,7 +40,7 @@ const VerifyEmail = () => {
       });
   };
 
-  const goToLogin = () => {
+  const goToLogin = (): void => {
     // log user out
     signOut(auth)
       .then(() => {
@@ -67,11 +67,11 @@ const VerifyEmail = () => {
   }, []);
 
   useEffect(() => {
-    if (counter === 0 || !sentEmail) return;
+    if (counter === 0 || !emailSent) return;
 
     const timer = setInterval(() => setCounter(counter - 1), 1000);
     return () => clearInterval(timer);
-  }, [counter, sendEmail]);
+  }, [counter, emailSent]);
 
   return (
     <main className='verify'>

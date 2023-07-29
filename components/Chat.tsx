@@ -10,6 +10,11 @@ import Messages from './Messages';
 import { AuthContext } from '@/context/AuthContext';
 import { Message, USER } from '@/public/interfaces';
 
+/*
+  this component is the right side of the container,
+  which contains the display of the messages, input field, send button,
+  and the chat navbar which contains the chatter's username and those icons
+*/
 const Chat = () => {
   const { chat, users, currentUser } = useContext(AuthContext);
   const currentUserID: string = currentUser?.uid ?? '';

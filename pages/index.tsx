@@ -16,11 +16,8 @@ const Home = () => {
       router.push('/login').then(() => {
         setChat!(null);
       });
-    } else {
-      // check if user's email has been verified
-      if (!currentUser.emailVerified) {
-        router.push('/verify-email');
-      }
+    } else if (!currentUser.emailVerified) {
+      router.push('/verify-email');
     }
   }, []);
 

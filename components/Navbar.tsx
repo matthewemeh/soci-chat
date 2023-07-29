@@ -9,6 +9,10 @@ import { AuthContext } from '@/context/AuthContext';
 import { AuthContextData } from '@/public/interfaces';
 import { showAlert } from '@/public/utils';
 
+/*
+  this component is on the left side of the container at the top,
+  which contains the user's image, a logout button, etc
+*/
 const Navbar = () => {
   const router: NextRouter = useRouter();
   const { currentUser, setChat } = useContext<AuthContextData>(AuthContext);

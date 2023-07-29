@@ -200,7 +200,7 @@ const Input: React.FC<Props> = ({ chatID }) => {
 
   return (
     <div className='input'>
-      <input ref={messageRef} type='text' placeholder='Send a message...' />
+      <input ref={messageRef} autoComplete='false' type='text' placeholder='Send a message...' />
 
       <div className='send'>
         <MdAttachFile />

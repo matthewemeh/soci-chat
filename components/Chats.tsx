@@ -18,6 +18,10 @@ import { db } from '@/backend/firebase';
 import { scrollElement, showAlert } from '@/public/utils';
 import { AuthContextData, ChatProps, USER } from '@/public/interfaces';
 
+/*
+  this component is the left side of the container,
+  which contains the display of the users's chats
+*/
 const Chats = () => {
   const [userChats, setUserChats] = useState<ChatProps[]>([]);
 

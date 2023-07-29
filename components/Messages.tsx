@@ -1,5 +1,5 @@
-import { Message as MessageProps } from '@/public/interfaces';
 import Message from './Message';
+import { Message as MessageProps } from '@/public/interfaces';
 
 interface Props {
   messages: MessageProps[];
